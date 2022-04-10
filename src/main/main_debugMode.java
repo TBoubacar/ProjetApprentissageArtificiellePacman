@@ -25,16 +25,16 @@ public class main_debugMode {
 		
 //		String chemin_maze = "src/layout/very_very_smallMaze.lay";
 //		String chemin_maze = "src/layout/very_smallMaze.lay";
-//		String chemin_maze = "src/layout/mediumClassic.lay";
-		String chemin_maze = "src/layout/originalClassic.lay";
+		String chemin_maze = "src/layout/mediumClassic.lay";
+//		String chemin_maze = "src/layout/originalClassic.lay";
 //		String chemin_maze = "src/layout/bigMaze.lay";
 //		String chemin_maze = "src/layout/xxx.lay";
 		PacmanGame _motor = new PacmanGame(chemin_maze, 1000, (long) 100);
 		
 
 		
-		QLearningStrategy strat = new ApproximateQLearningStrategy(epsilon, gamma, alpha,_motor.getMaze().getSizeX() - 2, _motor.getMaze().getSizeY() - 2);
-//		QLearningStrategy strat = new TabuLarQLearning(epsilon, gamma, alpha, _motor.getMaze().getSizeX() - 2, _motor.getMaze().getSizeY() - 2);
+//		QLearningStrategy strat = new ApproximateQLearningStrategy(epsilon, gamma, alpha,_motor.getMaze().getSizeX() - 2, _motor.getMaze().getSizeY() - 2);
+		QLearningStrategy strat = new TabuLarQLearning(epsilon, gamma, alpha, _motor.getMaze().getSizeX() - 2, _motor.getMaze().getSizeY() - 2);
 		
 		strat.setModeTrain(true);
 		
